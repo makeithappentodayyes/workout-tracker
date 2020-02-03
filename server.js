@@ -27,3 +27,17 @@ useNewUrlParser: true,
   useFindAndModify: false
 });
 
+// Here we require the models
+
+const db = require("./models");
+
+
+// require routes will use app.use(require)
+app.use(require("./routes/api-routes.js"));
+app.use(require("./routes/html-routes.js"));
+
+// have the app liten in a port a console messeage to let us know we are listening
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
+
